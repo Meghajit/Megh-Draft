@@ -1,0 +1,48 @@
+#whole{
+	background-color: transparent;
+	margin:12%;
+	/*border:2px solid black;*/
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+.but{
+	margin: auto;
+    width: 35%;
+  	margin-right:30%;
+    margin-top: 1%;
+    margin-bottom:1%; 
+}
+.but-margin{
+	margin-left: 15%;
+}
+#develop{
+	background : #D47FFF;
+	margin-left: 2%;
+	margin-top: 1%;
+    margin-bottom:2%;
+}
+.details{
+	float: right;
+	margin-right:10%;
+}
+.photo{
+	margin-top:2%; 
+}
+footer{
+	margin-top:20%;
+	background-color: #2D2D2D;
+	color: #ffffff;
+	height:13vh;
+	
+}
+footer a{
+	display: inline;
+	font-size: 150%;
+	margin-left: 2%;
+}
+footer a:hover{
+	text-decoration: none;
+	color: #D42AFF;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>StudentLogin</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/studentLogin.css">
+	<header style="color: #0000FF; font-weight: bolder; font-size: 300%;text-align: center; ">PESIT-BANGLORE SOUTH CAMPUS<br>WEB MINI-PROJECT<hr> </header>
+</head>
+<body id="wholebody" style="background:url(images/pes.jpg); background-size: cover; background-repeat: no-repeat;">
+	<center>
+	<h2 style="color: white; background-color:#2D2D2D;width: 45%;">TEACHERS' FEEDBACK SYSTEM</h2><hr>
+	<div id="form">	
+		<h3>Student Login</h3>
+		<form action="http://192.168.43.215:3000/login/student" method="post" enctype='application/json'>
+		<label for='usn' >USN:</label>
+		<div>	
+		<input type="text" id="usn" name="usn" required></input>
+		</div>
+		<label for='spassword' id="">Password:</label>
+		<div>	
+		<input type="password" id="spassword" name="spassword" required></input>
+		</div>
+
+	<input class="submit btn btn-success" type="submit" value="Submit" onclick="Create()">  </input>
+	<input class="submit btn btn-danger" type="reset" value="Reset" onclick="Reset()">
+	</input>
+	</form>
+</div>
+	</center>
+	
+</body>
+</html>

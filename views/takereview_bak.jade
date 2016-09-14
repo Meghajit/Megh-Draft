@@ -1,0 +1,43 @@
+html
+	head
+		title Review Form
+	body
+		h1= stucourse
+		h2 Professor #{stufaculty}
+		h3= stuname
+		h3= usn
+
+		- var url = "http://localhost:3000/login/student/TakeReview/SubmitReview"
+		
+		form(action="#{url}", method="post", enctype="application/json")
+			
+			- var feed = new Array(11);
+				- for(var i = 0; i < quest.length; i++) {
+					h2= quest[i].qmsg
+					input(type="radio", name= i, value=1, id="1")
+					label(for="1") Yes
+					input(type="radio", name= i , value=2,oncheck="feed[i]=2", id="2")
+					label(for="2") No
+					input(type="radio", name= i , value=3,oncheck="feed[i]=3", id="3")
+					label(for="3") Average
+					input(type="radio", name= i , id="4", value=4 ,oncheck="feed[i]=4", checked="true")
+					label(for="4") Not Applicable
+				- }
+					
+				input(type="hidden", name="cname", value= stucourse)
+				input(type="hidden", name="usn", value= usn)
+				input(type="hidden", name="numQuest", value= quest.length)
+				input(type="hidden", name="feed", value= feed)
+				input(type="submit", name="Submit", value="Submit")
+						
+			
+					
+
+
+
+			
+
+
+
+
+	

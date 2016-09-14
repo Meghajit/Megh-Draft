@@ -1,0 +1,74 @@
+html
+	head
+		title Review Form
+		
+	body
+		h1= stucourse
+		h2 Professor #{stufaculty}
+		h3= stuname
+		h3= usn
+
+		- var url = "http://localhost:3000/login/student/TakeReview/SubmitReview"
+		
+		- function iter(feed,siz) {
+		- var i;
+		- for(i=0;i<siz;i++) {
+		- var chan=save(document.forms[i],"qq");
+		- feed[i]=chan;
+		- }
+		- return feed;
+		- }
+
+		- function save(form, name) {
+		- var val;
+		- var radios = form.elements[name];
+		- for (var i=0, len=radios.length; i<len; i++) {
+		- if ( radios[i].checked ) { 
+		- val = radios[i].value; 
+		- break;
+		- }
+		- }
+		- return val;
+		- }
+
+
+		- var feed = new Array(11);
+		- var val=1;
+		
+		while(val!=12)
+		
+			form(action="", id="form0", onsubmit="val++;var counter= 0;for(var k=1;k<=4;k++){if(document.getElementById(k).checked){feed[counter]=document.getElementById('k').value;break;}};counter++; if(counter<quest.length){document.getElementById('msg').innerHTML=quest[counter].qmsg;}")
+				fieldset
+					
+					legend(id="msg")
+					input(type="radio", name= "qq", value=1, id="1")
+					label(for="1") Yes
+					input(type="radio", name= "qq" , value=2, id="2")
+					label(for="2") No
+					input(type="radio", name= "qq" , value=3, id="3")
+					label(for="3") Average
+					input(type="radio", name= "qq" , id="4", value=4, checked="true")
+					label(for="4") Not Applicable
+					input(type="submit")
+
+		form(action="#{url}", method="post", enctype="application/json")
+			
+			input(type="submit")
+			input(type="hidden", name="cname", value= stucourse)
+			input(type="hidden", name="usn", value= usn)
+			input(type="hidden", name="numQuest", value= quest.length)
+			input(type="hidden", name="feed", value= feed)
+				
+
+
+			
+					
+
+
+
+			
+
+
+
+
+	
