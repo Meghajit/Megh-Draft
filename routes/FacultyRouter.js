@@ -2,6 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 
+var cookieParser = require('cookie-parser');
 var hostname = "192.168.43.215";
 var port = 3000;
 
@@ -21,18 +22,19 @@ router.post('/', function(req,res,next){
 			sinchan.post('Select facname, cname from Faculty,Course where Faculty.facid=Course.fid and fid=? and facname=?',[req.body.fid, req.body.fpassword],res,function(ary){
 
 				if(ary.length!=0)
-				{
-					res.cookie('fyname',req.body.fpassword,{signed:false});
+				{	res.cookies=null;
+					res.cookie('facname',req.body.fpassword,{signed:false});
 							res.cookie('facid',req.body.fid,{signed:false});
-				}
 
-					console.log(req.cookies);
-							
-					res.render('facultydet', {
+
+				}
+						res.render('facultydet', {
 				 		arr:ary,
 				 		facid:req.body.fid,
-				 		facname:req.body.spassword
+				 		facname:req.body.fpassword
 				 		});
+
+					
 			});
 			
 	

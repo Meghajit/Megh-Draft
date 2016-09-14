@@ -1,0 +1,19 @@
+html
+	head
+		title "Welcome"
+	body
+		h1= facname
+		h2= facid
+		- var url = "http://192.168.43.215:3000/login/faculty/FacultyDetails"
+			table(border="border")
+				tr
+					th Course
+					th Total Students Enrolled
+					th Total Submitted Reviews
+				- for(var i = 0; i < arr.length; i++) {
+					
+				tr
+					td= arr[i].cname
+					td= arr[i].totalEnrolled
+					td= arr[i]. revSum
+				- }

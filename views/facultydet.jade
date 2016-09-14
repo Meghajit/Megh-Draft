@@ -5,37 +5,19 @@ html
 		if arr.length!=0
 			h1= facname
 			h2= facid
+			- var url = "http://192.168.43.215:3000/login/faculty/FacultyDetails"
 				table(border="border")
 					tr
 						th Course
-						th Faculty
-						th Review Status
 						th Option
-						
 					- for(var i = 0; i < arr.length; i++) {
 						
 					tr
 						td= arr[i].cname
-						td= arr[i].facname
-						if arr[i].revTaken !=0
-							td Submitted
-							td
-								- var url = "http://192.168.43.215:3000/login/student/TakeReview"
-									form(action="#{url}", method="post" enctype="application/json")
-										input(type="submit", value="Review Again")
-										input(type="hidden", name="CourseName", value= arr[i].cname)
-										input(type="hidden", name="FacultyName", value= arr[i].facname)
-
-						else
-							td Pending
-							td
-								- var url = "http://192.168.43.215:3000/login/student/TakeReview"
-								form(action="#{url}", method="post" enctype="application/json")
-									input(type="submit", value="Review Now")
-									input(type="hidden", name="CourseName", value= arr[i].cname)
-									input(type="hidden", name="FacultyName", value= arr[i].facname)
-						
-								
+						td
+							form(action="#{url}", method="post" enctype="application/json")
+								input(type="submit", value="See Status")
+								input(type="hidden", name="fid", value= facid)
 					- }
 		else
-			p Sorry. There is no student registered with that name!
+			p Sorry. There is no faculty registered with that name!

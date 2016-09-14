@@ -28,13 +28,13 @@ connection.acquire(function(err,con){
 
 //For Faculties, Review Status
 
-this.FacReviewStatus=function(quer,val,res){
+this.FacReviewStatus=function(quer,val,res,callme){
 
 connection.acquire(function(err,con){
 
 	con.query(quer,val,function(err,result){
 		   con.release();
-			res.json(result);
+			callme(result);
 
 	});
 });

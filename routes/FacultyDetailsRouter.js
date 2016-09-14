@@ -16,7 +16,26 @@ var sinchan=require('../models/dbmodel');
 router.post('/', function(req,res,next){
 
 			console.log(req.body);
-			sinchan.FacReviewStatus(' Select cname, sum(revTaken) as "revSum" , count(susn) as "totalEnrolled" from Enrolled, Course where Enrolled.courseid=Course.courseid and Course.fid=? group by cname',[req.body.fid],res);
+			sinchan.FacReviewStatus(' Select cname, sum(revTaken) as "revSum" , count(susn) as "totalEnrolled" from Enrolled, Course where Enrolled.courseid=Course.courseid and Course.fid=? group by cname',[req.body.fid],res, function(ary){
+
+
+
+					if(ary.length!=0){
+
+							console.log(req.cookies);
+
+							res.render('facultyreview', {
+				 		arr:ary,
+				 		facid:req.cookies.facid,
+				 		facname:req.cookies.facname
+
+				 		});
+
+
+						}
+
+
+			});
 			
 	
 
