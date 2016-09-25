@@ -104,6 +104,11 @@ for(j=0;j<req.body.numQuest;j++)
 
 	con.query('Update Review set answer=? where Review.courseid=(Select courseid from Course where cname=?) and Review.usn=? and Review.qnum=?',[sim[j],req.body.cname,req.body.usn,j+1],function(err,result){
 
+		con.query('Update Enrolled set revTaken=1 where susn=? and courseid=(Select courseid from Course where cname=?)',[req.body.usn,req.body.cname],function(err,result){
+
+			if(err)
+			console.log(err);
+		});
 		if(err)
 			console.log(err);
 		});

@@ -1,42 +1,65 @@
 html
 	head
 		title Review Form
-		
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width,initial-scale=1')
+		link(href='/css/bootstrap.min.css', rel='stylesheet')
+		link(href='/css/bootstrap-theme.min.css', rel='stylesheet')
+		link(href='/mystyles.css', rel='stylesheet')
 	body
-		h1= stucourse
-		h2 Professor #{stufaculty}
-		h3= stuname
-		h3= usn
-
-		- var url = "http://192.168.43.215:3000/login/student/TakeReview/SubmitReview"
-		
-		form(action="#{url}", method="post", enctype="application/json")
-			- for(var i = 0; i < quest.length; i++) {
-
-			fieldset
-				legend(id="msg")= quest[i].qmsg
-				input(type="radio", name= "feed"+i, value="1", id="1")
-				label(for="1") Yes
-				input(type="radio", name= "feed"+i, value="2", id="2")
-				label(for="2") No
-				input(type="radio", name= "feed"+i, value="3", id="3")
-				label(for="3") Average
-				input(type="radio", name= "feed"+i, id="4", value="4", checked="true")
-				label(for="4") Not Applicable
-			- }
-			input(type="hidden", name="cname", value= stucourse)
-			input(type="hidden", name="usn", value= usn)
-			input(type="hidden", name="numQuest", value= quest.length)
-			input(type="submit", name="Submit", value="Submit")
-			
-				
-
-
-			
-					
-
-
-
+		header.jumbotron
+			.container
+				.row
+					.col-xs-12.col-sm-10
+						h1= stucourse
+						h2 Professor #{stufaculty}
+						br
+						br
+					.col-xs-12.col-sm-2
+						img(src='/pes.png',alt='PES Logo')
+				.row
+					.col-xs-12.col-sm-3.col-sm-push-9
+						h3= stuname
+						h3= usn
+		.container
+			.row
+				.col-xs-12.col-sm-10.col-sm-offset-2
+					h3				
+						strong Feedback Form
+					br
+					br
+					- var url = "http://192.168.43.215:3000/login/student/TakeReview/SubmitReview"
+					form(action="#{url}", method="post", enctype="application/json" class="form form-horizontal" role='form')
+						- for(var i = 0; i < quest.length; i++) {
+						fieldset
+							.form-group
+								.col-xs-12.col-sm-12
+									legend(id="msg")= quest[i].qmsg
+							.form-group
+								.col-xs-12.col-sm-3
+									label.radio-inline
+										input(type="radio", name= "feed"+i, value="1")
+										|	Yes
+								.col-xs-12.col-sm-3
+									label.radio-inline
+										input(type="radio", name= "feed"+i, value="2")
+										|	No
+								.col-xs-12.col-sm-3
+									label.radio-inline
+										input(type="radio", name= "feed"+i, value="3")
+										|	Average
+								.col-xs-12.col-sm-3
+									label.radio-inline
+										input(type="radio", name= "feed"+i, value="4", checked="true")
+										|	Not Applicable
+						- }
+						input(type="hidden", name="cname", value= stucourse)
+						input(type="hidden", name="usn", value= usn)
+						input(type="hidden", name="numQuest", value= quest.length)
+						input(type="submit", name="Submit", value="Submit")
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+		script(src='/js/bootstrap.min.js')
 			
 
 

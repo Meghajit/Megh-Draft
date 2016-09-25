@@ -1,0 +1,46 @@
+html
+  head
+    title Welcome Student
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    link(href='/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/css/bootstrap-theme.min.css', rel='stylesheet')
+    link(href='/mystyles.css', rel='stylesheet')
+  body
+    header.jumbotron
+      .container
+        .row
+          .col-xs-12.col-sm-10
+            h1 Snehanshu Saha
+            h2 Database Design
+            br
+            br
+          .col-xs-12.col-sm-2
+            img(src='/pes.png', alt='PES Logo')
+        .row
+          .col-xs-12.col-sm-3.col-sm-push-9
+            h3.stText Meghajit Mazumdar
+            h3.stText 1PE13CS087
+    .container
+      .row
+        .col-xs-12.col-sm-10.col-sm-offset-2
+          h3 Feedback Statistics
+          .table-responsive
+            table.table.table-striped
+              tr
+                th Subject
+                th Review Status
+                th See Review
+              tr
+                td Database Design
+                td Submitted
+                td
+                  button Click me!
+              tr
+                td Discrete Maths
+                td Pending
+                td
+                  button Click me!
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js').
+    script(src='/js/bootstrap.min.js')

@@ -1,19 +1,40 @@
 html
 	head
-		title "Welcome"
+		title= facname
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width,initial-scale=1')
+		link(href='/css/bootstrap.min.css', rel='stylesheet')
+		link(href='/css/bootstrap-theme.min.css', rel='stylesheet')
+		link(href='/mystyles.css', rel='stylesheet')
 	body
-		h1= facname
-		h2= facid
-		- var url = "http://192.168.43.215:3000/login/faculty/FacultyDetails"
-			table(border="border")
-				tr
-					th Course
-					th Total Students Enrolled
-					th Total Submitted Reviews
-				- for(var i = 0; i < arr.length; i++) {
-					
-				tr
-					td= arr[i].cname
-					td= arr[i].totalEnrolled
-					td= arr[i]. revSum
-				- }
+		header.jumbotron
+			.container
+				.row			
+					.col-xs-12.col-sm-10
+						h1= facname
+						h2= facid
+						br
+						br
+					.col-xs-12.col-sm-2
+						img(src='/pes.png',alt='PES logo')
+					- var url = "http://192.168.43.215:3000/login/faculty/FacultyDetails"
+		.container
+			.row
+				.col-xs-12.col-sm-10.col-sm-offset-2
+					h3 Review Details
+					.table-responsive
+						table(class="table table-striped")
+							tr
+								th Course
+								th Total Students Enrolled
+								th Total Submitted Reviews
+							- for(var i = 0; i < arr.length; i++) {
+								
+							tr
+								td= arr[i].cname
+								td= arr[i].totalEnrolled
+								td= arr[i]. revSum
+							- }
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js').
+		script(src='/js/bootstrap.min.js')
