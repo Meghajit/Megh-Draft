@@ -8,11 +8,11 @@ function Connection(){
 
 		this.pool=mysql.createPool({
 
-			connectionLimit:10,
-			host:'localhost',
-			user:'root',
-			password:'Sinchana@12e',
-			database:'Sinchan'
+			connectionLimit:50,
+			host:'us-cdbr-iron-east-04.cleardb.net	',
+			user:'bfbca786d1f68f',
+			password:'7645024e ',
+			database:'ad_3a8a289b7979d01'
 
 		});
 	};
