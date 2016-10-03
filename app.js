@@ -5,8 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var hostname = "localhost";
-var distr="192.168.43.215";
-var port = 3000;
+var distr="achintya.herokuapp.com";
+var port = process.env.PORT;
 
 var connection=require('./connection');
 var routes = require('./routes/index');
