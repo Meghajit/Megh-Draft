@@ -145,13 +145,14 @@ this.post=function(quer,val,res,callme){
 	connection.acquire(function(err,con){
 		con.query(quer,val,function(err,result){
 
-		
+		if(err) throw err;
 
 			con.release();
 			callme(result);
 
      
     });
+		if(err) throw err;
 
 
 				
