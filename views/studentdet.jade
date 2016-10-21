@@ -39,7 +39,7 @@ html
 									if arr[i].revTaken !=0
 										td Submitted
 										td
-											- var url = "http://192.168.43.215:3000/login/student/TakeReview"
+											- var url = "https://achintya.herokuapp.com/login/student/TakeReview"
 												form(action="#{url}", method="post" enctype="application/json")
 													input(type="submit", value="Review Again")
 													input(type="hidden", name="CourseName", value= arr[i].cname)
@@ -48,7 +48,7 @@ html
 									else
 										td Pending
 										td
-											- var url = "http://192.168.43.215:3000/login/student/TakeReview"
+											- var url = "https://achintya.herokuapp.com/login/student/TakeReview"
 											form(action="#{url}", method="post" enctype="application/json")
 												input(type="submit", value="Review Now")
 												input(type="hidden", name="CourseName", value= arr[i].cname)

@@ -4,9 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var hostname = "localhost";
-var distr="achintya.herokuapp.com";
-var port = process.env.PORT;
+var port = process.env.PORT||3000;
 
 var connection=require('./connection');
 var routes = require('./routes/index');
@@ -28,9 +26,9 @@ var takeReviewRouter=require('./routes/TakeReviewRouter');
 var app = express();
 
 connection.init();
-app.listen(port, distr, function(){
+app.listen(port, function(){
 
-  console.log(`Server now running at http://${hostname}:${port}/`);
+  console.log(`Server now running at port ${port}/`);
 });
 
 
