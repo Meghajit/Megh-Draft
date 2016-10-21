@@ -8,7 +8,6 @@ function Connection(){
 
 		this.pool=mysql.createPool({
 
-			connectionLimit:50,
 			host:'us-cdbr-iron-east-04.cleardb.net	',
 			user:'bfbca786d1f68f',
 			password:'7645024e ',
